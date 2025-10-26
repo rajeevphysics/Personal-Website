@@ -199,7 +199,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: "2024",
     title: "Wrapped up my 1A Term",
     description: "Finished my challenging 1A term ",
-    detailedDescription: "hhhh",
+    detailedDescription: "Ended an interesting first semester at the University of Waterloo. This semester, my goals were to make new connections while maintaining my academics. Although I made a lot of new friends, I found it challenging to study efficiently. \n\nNext semester, I would want to figure out a better studying technique, so I can spend more time doing things outside of studying.",
     image: "1sem.jpg",
     tags: ["Education"],
     status: "Ended",
