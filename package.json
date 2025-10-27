@@ -7,7 +7,8 @@
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",
-    "deploy": "echo 'Deployment handled automatically by Cloudflare Pages'"
+    "deploy": "wrangler pages deploy",
+    "deploy:preview": "wrangler pages deploy --branch=preview"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
