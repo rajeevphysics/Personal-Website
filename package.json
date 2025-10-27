@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "echo 'Deployment handled automatically by Cloudflare Pages'"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
