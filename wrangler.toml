@@ -1,0 +1,14 @@
+name = "rajeev-persaud-portfolio"
+compatibility_date = "2024-01-01"
+
+[assets]
+directory = "out"
+
+[env.production]
+name = "rajeev-persaud-portfolio"
+routes = [
+  { pattern = "*", zone_name = "rajeevpersaud.com" }
+]
+
+[env.preview]
+name = "rajeev-persaud-portfolio-preview"
