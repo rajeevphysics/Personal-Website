@@ -74,7 +74,6 @@ export default function Header() {
                 className={`text-lg font-medium hover:opacity-70 transition-opacity ${
                   pathname === "/" ? "border-b-2 border-blue-500" : ""
                 }`}
-                onClick={(e) => handleNavClick(e, "about")}
               >
                 About
               </Link>
@@ -83,7 +82,6 @@ export default function Header() {
                 className={`text-lg font-medium hover:opacity-70 transition-opacity ${
                   pathname === "/timeline" ? "border-b-2 border-blue-500" : ""
                 }`}
-                onClick={(e) => handleNavClick(e, "timeline")}
               >
                 Timeline & Projects
               </Link>
@@ -95,15 +93,14 @@ export default function Header() {
               >
                 Goals
               </Link>
-              <Link
-                href="/skills"
-                className={`text-lg font-medium hover:opacity-70 transition-opacity ${
-                  pathname === "/skills" ? "border-b-2 border-blue-500" : ""
-                }`}
-                onClick={(e) => handleNavClick(e, "skills")}
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium hover:opacity-70 transition-opacity"
               >
                 CV
-              </Link>
+              </a>
               <a
                 href="https://github.com/rajeevphysics"
                 target="_blank"
@@ -182,15 +179,14 @@ export default function Header() {
           >
             Goals
           </Link>
-          <Link
-            href="/skills"
-            onClick={() => setIsMenuOpen(false)}
-            className={`text-4xl font-bold hover:text-blue-500 transition-colors ${
-              pathname === "/skills" ? "text-blue-500" : ""
-            }`}
-          >
-            CV
-          </Link>
+         <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl font-bold hover:text-blue-500 transition-colors"
+              >
+                CV
+          </a>
           <a
             href="https://github.com/rajeevphysics"
             target="_blank"

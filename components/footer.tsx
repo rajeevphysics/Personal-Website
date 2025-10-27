@@ -33,9 +33,15 @@ export default function Footer() {
             </a>
 
             <div className="flex flex-col gap-3">
-              <Link href="/skills" className="text-gray-300 hover:text-blue-400 transition-colors relative z-30">
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-blue-400 transition-colors relative z-30"
+              >
                 CV
-              </Link>
+              </a>
+
               <a
                 href="https://github.com/rajeevphysics"
                 target="_blank"
