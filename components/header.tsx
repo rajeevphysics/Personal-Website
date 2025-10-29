@@ -61,16 +61,14 @@ export default function Header() {
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
-              <div className="w-8 h-8 bg-foreground rounded flex items-center justify-center">
-                <span className="text-background font-bold text-sm">P</span>
-              </div>
+             <img src="favicon.svg" width={32} height={32}  className="rounded" />
               <span className="text-sm">by Rajeev Persaud</span>
             </Link>
 
             {/* Increased gap from gap-8 to gap-12 for better spacing */}
             <nav className="flex items-center gap-12">
               <Link
-                href="/#about"
+                href="/"
                 className={`text-lg font-medium hover:opacity-70 transition-opacity ${
                   pathname === "/" ? "border-b-2 border-blue-500" : ""
                 }`}

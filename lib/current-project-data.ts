@@ -15,7 +15,7 @@ export interface CurrentProjectData {
 
 // Latest project data
 export const latestProject: CurrentProjectData = {
-  month: "Jan",
+  month: "Oct",
   year: "2025",
   title: "Joined Rocketry Payload Subteam",
   description:

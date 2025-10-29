@@ -39,27 +39,14 @@ export default function EventModal({ selectedEvent, onClose, onEventClick }: Eve
           onClick={(e) => e.stopPropagation()}
           className="relative z-50 bg-white rounded-lg p-8 md:p-12 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
         >
-          <div className="flex justify-between items-start mb-6">
-            <div className="flex gap-2 flex-wrap">
-              {selectedEvent.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className={`${getTagColor(tag)} px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide`}
-                >
-                  {tag}
-                </span>
-              ))}
-              <span className={`${getStatusColor(selectedEvent.status)} px-3 py-1 rounded-full text-xs font-semibold`}>
-                {selectedEvent.status}
-              </span>
-            </div>
+          <div className="flex justify-end items-start mb-6">
             <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-4xl leading-none">
               ×
             </button>
           </div>
           <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden rounded-lg">
             <img
-              src={selectedEvent.image || "/placeholder.svg"}
+              src={selectedEvent.image }
               alt={selectedEvent.title}
               className="relative -z-10 w-full h-full object-cover"
             />

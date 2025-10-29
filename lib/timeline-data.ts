@@ -1,19 +1,19 @@
 /**
- * Timeline Data and Utilities
- *
- * This file contains all timeline event data, interfaces, and utility functions
- * for the timeline page. It's separated from the main page component for better
- * organization and maintainability.
- */
+  Timeline Data and Utilities
+ 
+  This file contains all timeline event data, interfaces, and utility functions
+ for the timeline page. It's separated from the main page component for better
+  organization and maintainability.
+ /
 
 /**
- * Available Tags for Timeline Events:
- *
- * - Personal Project, Research, Competition, Athletic Competition, Publication, Certification, Volunteering, Group, Physics
- * - Education, Award, Technology
- *
- * Note: Tags are case-sensitive and should match exactly as listed above.
- * Add new tags to the getTagColor function with appropriate color schemes.
+  Available Tags for Timeline Events:
+ 
+ - Personal Project, Research, Competition, Athletic Competition, Publication, Certification, Volunteering, Group, Physics
+  - Education, Award, Technology
+ 
+  Note: Tags are case-sensitive and should match exactly as listed above.
+  Add new tags to the getTagColor function with appropriate color schemes.
  */
 
 export interface TimelineEvent {
@@ -32,6 +32,19 @@ export interface TimelineEvent {
 }
 
 export const timelineEvents: TimelineEvent[] = [
+  {
+    id: 17,
+    month: "Oct",
+    year: "2025",
+    title: "Started Student Based Research with WatCompPhys",
+    description: "Joined the WatCompPhys research group to begin student lead undergraduate research on gravitational waves",
+    detailedDescription: "WatCompPhys is an up-and-coming student club that focuses on cool computational and theoretical research. It is similar to a design team in that all funding, goals, and timelines are managed and executed by students. Likely with the goal being some type of competition. Currently, this club only has a small group of approximately 8 people, while we start our first project, then will expand to more projects, bringing in new members, and getting more funding as well.\n\nOur first project is calculating the gravitational field of a single planet. We assume this planet is so far away from other planets that the field in calculations will be from a single planet, and the radius, mass, etc, are all known. I’m excited to do this project, since it’ll be quite coding-heavy, giving me some more experience in coding complex calculations, while learning some new concepts outside of classes.",
+    image: "reproj1.png",
+    tags: [ "Research", "Group" ],
+    status: "Started",
+
+  },
+
 {
     id: 16,
     month: "Oct",
@@ -126,7 +139,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: "2025",
     title: "Joined Rocketry Student Design Team",
     description: "Became a member of the University of Waterloo's Rocketry Student Design Team",
-    detailedDescription: "Rocktry is a student design team (managed and run by students) that is based on an international competition on building, designing, and testing rockets. The competition is based on which team can create a rocket which reaches the highest distances, while taking into account the competition's rules.\n\n This is a massive undertaking for students who have to secure funding and build and test a rocket from scratch. So many subteams manage different parts of the rocket. Some subsystems are mainframe, which are responsible for creating the cover of the rocket, software for the software of the rocket, recovery for bringing the rocket back down safely, and electrical for building circuits and batteries. \n\n I’m not sure which subteam I will be joining, but my goals are to help maintain, experiment and run a rocket. ",
+    detailedDescription: "Rocketry is a student design team (managed and run by students) that is based on an international competition on building, designing, and testing rockets. The competition is based on which team can create a rocket which reaches the highest distances, while taking into account the competition's rules.\n\n This is a massive undertaking for students who have to secure funding and build and test a rocket from scratch. So many subteams manage different parts of the rocket. Some subsystems are mainframe, which are responsible for creating the cover of the rocket, software for the software of the rocket, recovery for bringing the rocket back down safely, and electrical for building circuits and batteries. \n\n I’m not sure which subteam I will be joining, but my goals are to help maintain, experiment and run a rocket. ",
     image: "rocket1.jpg",
     tags: ["Volunteering", "Competition", "Group" ],
     status: "Started",
@@ -253,7 +266,7 @@ export const timelineEvents: TimelineEvent[] = [
     description: "Placed second in the 2024 Spring Fling Competition",
     detailedDescription:
       "The 2024 Spring Fling Competition is an experimental-based competition against students in my cohort and beyond our school. This competition requires students to design a device that flings springs off to hit specified targets. Then, during the main competition, groups of two are timed and given random angles and distances they must launch the spring. During preparation, students must take into account the limitations of approximations and management to succeed.\n\nMy partner and I created a 3-angle spring system out of wood pieces and used measurements to create precise launching points (which, looking back, I wish I had taken a photo of). We bought a spring from Home Depot to experimentally calculate the spring constant. We relied on the approximation of Hook's laws and projectile motion to derive the spring constant. From that, we used Hook's law and projectile motion to predict the pullback and angle to reach specified points. During our preparation, we attempted not to use the spring as much as possible, as that would change the spring constant over time.\n\nDuring the competition, we scored 13 points, 2 points lower than the first place. We also placed 2nd place in design, accumulating 33/40 total points from judges. This was a great competition to finish off high school, and it propelled me further into pursuing my experimental career.",
-    image: "fling.jpg",
+    image: "fling.JPG",
     tags: ["Competition", "Group"],
     status: "Completion",
   },
@@ -316,6 +329,6 @@ export const quickSearchData = {
   events: [
     { label: "Math & Matter Educational Project", query: "Math & Matter" },
     { label: "NASA Space App Competition", query: "NASA Space App Competition" },
-    { label: "Waterloo Rocktry Team", query: "Rocktry" },
+    { label: "Waterloo Rocketry Team", query: "Rocketry" },
   ],
 }
