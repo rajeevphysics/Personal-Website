@@ -19,7 +19,8 @@ export default function LoadingBar() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-blue-500 z-[1000] origin-left"
+      className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 
+      via-blue-600 to-blue-500 z-[10000] origin-left shadow-lg shadow-blue-500/50"
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       exit={{ opacity: 0 }}
