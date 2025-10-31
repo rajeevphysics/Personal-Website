@@ -18,7 +18,7 @@ export default function About() {
   const underline5 = useTransform(scrollYProgress, [0.60, 0.66], [0, 1])
 
   const text =
-    "I'm a second-year Physics student at the University of Waterloo with a strong interest in experimental work. My biggest interest lies in optical systems  and condensed . I plan to pursue graduate research in a related field. Beyond research, I'm deeply interested in improving  the communication of scientific ideas  among researchers and to the general public. Whether that be creating visuals, an interactive website or rewording complex phrases."
+    "I'm a second-year Physics student at the University of Waterloo with a strong interest in experimental work. Although my intrest are very wide I have the most intrest in optical systems  and condensed . I plan to pursue graduate research in a related field. Beyond research, I'm deeply interested in improving  the communication of scientific ideas  among researchers and to the general public. Whether that be visualizing data, creating an interactive website or rewording complex phrases."
 
   const words = text.split(" ")
 

@@ -59,7 +59,7 @@ export default function EventModal({ selectedEvent, onClose, onEventClick }: Eve
           <div className="space-y-4">
             <div className="flex items-baseline gap-4">
               <span className="text-blue-500 font-bold text-xl">
-                {selectedEvent.month} {selectedEvent.year}
+                {selectedEvent.month} {selectedEvent.date} {selectedEvent.year}
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">{selectedEvent.title}</h2>

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-black text-white py-16 px-6 relative">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="relative ">
+          <div className="relative">
             <h3 className="text-2xl font-bold mb-4 z-50">My Philosophy</h3>
             <p className="relative z-50 text-gray-300 leading-relaxed">
               In this new era of science, communications between researchers, institutions, policy makers, and the
@@ -55,7 +55,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm relative z-30">
-          © {new Date().getFullYear()} Rajeev Persaud. All rights reserved.
+          © {new Date().getFullYear()} Rajeev Persaud. All rights reserved. 
+          
         </div>
       </div>
     </footer>

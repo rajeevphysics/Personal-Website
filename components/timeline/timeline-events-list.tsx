@@ -4,6 +4,13 @@ import { getTagColor, getStatusColor, type TimelineEvent } from "@/lib/timeline-
 
 /* Page for just filtering timeline events */
 
+/*
+
+Add in date to filter should go year -> month -> day if needed
+
+
+*/
+
 interface TimelineEventsListProps {
   eventsByYear: Record<string, TimelineEvent[]>
   years: string[]
@@ -54,7 +61,7 @@ export default function TimelineEventsList({ eventsByYear, years, onEventClick }
                         {event.title}
                       </h3>
                       <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                        {event.month} {year}
+                        {event.month} {event.date} {year}
                       </p>
                       <div className="flex gap-2 flex-wrap">
                         {event.tags.map((tag) => (

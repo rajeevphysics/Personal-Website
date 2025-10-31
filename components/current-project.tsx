@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import { latestProject, getTagColor } from "@/lib/current-project-data"
 import { useEffect, useState } from "react"
 
+// This page is for current event visable through the homepage
+
 export default function CurrentProject() {
   const [showContent, setShowContent] = useState(false)
 
