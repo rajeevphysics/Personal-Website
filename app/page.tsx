@@ -3,6 +3,7 @@ import Hero from "@/components/hero"
 import Phrase from "@/components/phrase"
 import About from "@/components/about"
 import Quote from "@/components/quote"
+import Bio from "@/components/bio"
 import TechnicalSkillsIntro from "@/components/technical-skills-intro"
 import CurrentProject from "@/components/current-project"
 import LoadingBar from "@/components/loading-bar"
@@ -17,10 +18,11 @@ export default function Home() {
       <Header />
       <Hero />
       <Phrase />
-      <About />
-      <Quote />
-      <TechnicalSkillsIntro />
+      <Bio />
+      {/* <About /> */}
       <CurrentProject />
+      <Quote />
+      {/* <TechnicalSkillsIntro /> */}
       <Footer />
     </div>
   )

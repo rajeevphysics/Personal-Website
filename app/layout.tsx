@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import CustomCursor from "@/components/custom-cursor"
 import MobileWarning from "@/components/mobile-warning"
+import SmoothScroll from "@/components/smoothscroll"
+import LoadingBar from "@/components/loading-bar"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
     icon: "favicon.svg",
   },
 }
+
 
 export default function RootLayout({
   children,
@@ -28,9 +31,12 @@ export default function RootLayout({
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <LoadingBar />
         <MobileWarning />
         <CustomCursor />
-        <Suspense fallback={null}>{children}</Suspense>
+        <SmoothScroll>
+          <Suspense fallback={null}>{children}</Suspense>
+        </SmoothScroll>
         <Analytics />
       </body>
     </html>

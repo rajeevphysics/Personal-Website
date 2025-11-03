@@ -5,14 +5,14 @@ import { motion, useMotionValue, useSpring } from "framer-motion"
 import { ArrowUp, ArrowDown } from "lucide-react"
 
 /**
- * Goals Page Cursor Component
- *
- * Z-Index Hierarchy for Goals Page:
- * - z-0: Hero section background
- * - z-20: Scrolling content sections
- * - z-30: Hoverable navigation buttons (cursor appears above these)
- * - z-40: Goals cursor (middle layer)
- * - z-50: Non-hoverable text (appears above cursor)
+ Goals Page Cursor Component
+
+Z-Index Hierarchy for Goals Page:
+z-0: Hero section background
+z-20: Scrolling content sections
+z-30: Hoverable navigation buttons (cursor appears above these)
+z-40: Goals cursor (middle layer)
+z-50: Non-hoverable text (appears above cursor)
  */
 
 interface GoalsCursorProps {

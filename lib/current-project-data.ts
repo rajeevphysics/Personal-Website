@@ -5,6 +5,7 @@ export interface CurrentProjectData {
   month: string
   year: string
   title: string
+  date: number
   description: string
   image: string
   tags: string[]
@@ -17,6 +18,7 @@ export interface CurrentProjectData {
 export const latestProject: CurrentProjectData = {
   month: "Oct",
   year: "2025",
+  date: 1,
   title: "Joined Rocketry Payload Subteam",
   description:
     "Joined the Payload subteam of the University of Waterloo's Rocketry Student Design Team.",
