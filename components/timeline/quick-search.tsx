@@ -21,14 +21,14 @@ export default function QuickSearch({ setSearchQuery, setSelectedTag }: QuickSea
         <h3 className="text-sm font-semibold text-gray-700">Quick Search</h3>
 
         <div className="space-y-2">
-          <p className="text-xs text-gray-500 uppercase tracking-wide">Topics</p>
+          <p className="text-xs text-gray-500 z-20 uppercase tracking-wide">Topics</p>
           <div className="flex flex-wrap gap-2">
             {quickSearchData.topics.map((topic) => (
               <button
                 key={topic.label}
                 data-quick-search
                 onClick={() => setSearchQuery(topic.query)}
-                className="relative z-25 px-4 py-2 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm font-medium hover:bg-indigo-100 transition-colors"
+                className="relative z-20 px-4 py-2 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm font-medium hover:bg-indigo-100 transition-colors"
               >
                 {topic.label}
               </button>
@@ -36,7 +36,7 @@ export default function QuickSearch({ setSearchQuery, setSelectedTag }: QuickSea
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 z-20">
           <p className="text-xs text-gray-500 uppercase tracking-wide">Tags</p>
           <div className="flex flex-wrap gap-2">
             {quickSearchData.tags.map((tagItem) => (
@@ -44,7 +44,7 @@ export default function QuickSearch({ setSearchQuery, setSelectedTag }: QuickSea
                 key={tagItem.label}
                 data-quick-search
                 onClick={() => setSelectedTag(tagItem.tag)}
-                className="relative z-25 px-4 py-2 bg-purple-50 text-purple-700 border border-purple-200 rounded-full text-sm font-medium hover:bg-purple-100 transition-colors"
+                className="relative z-20 px-4 py-2 bg-purple-50 text-purple-700 border border-purple-200 rounded-full text-sm font-medium hover:bg-purple-100 transition-colors"
               >
                 {tagItem.label}
               </button>
@@ -60,7 +60,7 @@ export default function QuickSearch({ setSearchQuery, setSelectedTag }: QuickSea
                 key={event.label}
                 data-quick-search
                 onClick={() => setSearchQuery(event.query)}
-                className="relative z-25 px-4 py-2 bg-gray-50 text-gray-700 border border-gray-200 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
+                className="relative z-20 px-4 py-2 bg-gray-50 text-gray-700 border border-gray-200 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
               >
                 {event.label}
               </button>

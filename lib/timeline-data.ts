@@ -19,6 +19,7 @@
 export interface TimelineEvent {
   id: number
   month: string
+  date: number
   year: string
   title: string
   description: string
@@ -35,6 +36,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 17,
     month: "Oct",
+    date: 27,
     year: "2025",
     title: "Started Student Based Research with WatCompPhys",
     description: "Joined the WatCompPhys research group to begin student lead undergraduate research on gravitational waves",
@@ -48,6 +50,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 16,
     month: "Oct",
+    date: 16,
     year: "2025",
     title: "Completed Cryogenic and Compressed Gas Safety Certification",
     description: "Finished Cryogenic and Compressed Gas Safety Certification",
@@ -59,6 +62,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 15,
     month: "Oct",
+    date: 18,
     year: "2025",
     title: "Completed ESMS Safety Certification",
     description: "Finished the Engineering Student Machine Shop Safety Certification",
@@ -70,6 +74,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 14,
     month: "Oct",
+    date: 15,
     year: "2025",
     title: "Completed WHMIS 2015 Certification",
     description: "Finished WHMIS 2015 certification for handling hazardous materials",
@@ -81,6 +86,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 13,
     month: "Oct",
+    date: 8,
     year: "2025",
     title: "Volunterring as a Undergraduate Student Cohert Rep",
     description: "Began volunteering as a UG student cohort representative for the University of Waterloo Physics & Astronomy department",
@@ -94,6 +100,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 12,
     month: "Oct",
+    date: 1,
     year: "2025",
     title: "Joined Rocketry Payload Subteam",
     description: "Joined the Payload subteam of the University of Waterloo's Rocketry Student Design Team",
@@ -109,6 +116,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: 11,
     month: "Oct",
     year: "2025",
+    date: 5,
     title: "Completed NASA Space App Competition",
     description: "Finished and presented our project for the NASA Space App Competition",
     detailedDescription: "My team, consisting of three members (including me), has created a working app and machine learning model. The machine learning model was taught using two NASA data sets leading to an accuracy rating of approximately 80%. Our goal from the start was to create an app that was interactive and usable for the average person as well as researchers.\n\nOur site is built with React, 3.js and Next.js was designed to show the users how the plants behaved and compared to their star. Our site communicated with our machine learning model via FASTAPI. For researchers, our website was designed to take CSV-style inputs to communicate with our machine learning effectively, to reduce lag between input and output.\n\nAlthough we didn't win the final awards, this hackathon has taught me very unique solutions to problems I faced during the hackathon. I found that many of our problems relied solely on communication issues and poor planning. Poor planning could have been addressed beforehand by creating a better map of what needed to be done. As well, more time should have been dedicated to preparing for our pitch, which would have lowered the unnecessary stress faced in the two days. Communicating ideas and critiques should have been better vocalized, and it is something I am always trying to improve. ",
@@ -122,6 +130,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 10,
     month: "Oct",
+    date: 4,
     year: "2025",
     title: "Started NASA Space App Competition",
     description: "Began working on the NASA Space App Competition with a team of 3 other students",
@@ -135,7 +144,8 @@ export const timelineEvents: TimelineEvent[] = [
   },
 {
     id: 9,
-    month: "Oct",
+    month: "Sept",
+    date: 25,
     year: "2025",
     title: "Joined Rocketry Student Design Team",
     description: "Became a member of the University of Waterloo's Rocketry Student Design Team",
@@ -149,6 +159,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 9,
     month: "Sept",
+    date: 4,
     year: "2025",
     title: "Started 2A semester term",
     description: "Began my fall 2A term",
@@ -161,6 +172,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 8,
     month: "Aug",
+    date: 20,
     year: "2025",
     title: "V1.1.2 of Math & Matter Released",
     description: "Released V1.1.2 of my Math & Matter educational website, last update before starting 2A semester",
@@ -173,6 +185,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 7,
     month: "June",
+    date: 10,
     year: "2025",
     title: "Started Math & Matter Educational Project",
     description: "Started a personal project to create a website condensing first-year math and physics knowledge",
@@ -185,6 +198,7 @@ export const timelineEvents: TimelineEvent[] = [
 {
     id: 6,
     month: "Apr",
+    date: 30,
     year: "2025",
     title: "Finished 1B term",
     description: "Finished a challanging 1B term, marking the end of my first year at university",
@@ -200,6 +214,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: 6,
     month: "Feb",
     year: "2025",
+    date: 8,
     title: "Competed in the 2025 Refridge-Eighter Race",
     description: "Competed against 200+ people in a 5km + 8mi race in the cold winter",
     detailedDescription: "The refridge-eighter race is a yearly running competition that runs during the peak of winter. It involves running 8 miles in the cold, which brings on unique challenges of preparing and competing. I wanted to compete in this competition, not to compete for placement, but just to experience the “crazy people” running event. \n\nIt was, in fact, the crazy people running event, where it was peaking -20 degrees with very windy conditions. Thankfully, I completed the race unharmed and got a cool medal. Running during the winter is definitely fun when it’s up to me when I want to run, but being at the mercy of the weather is not so fun.",
@@ -211,6 +226,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: 5,
     month: "Jan",
     year: "2025",
+    date: 6,
     title: "Started my 1B Term",
     description: "Began my winter 1B term",
     detailedDescription: "My 1B semester marks the first semester I will take during a winter term. The courses taken this semester are Calculus-Based Physics 2 (PHYS 122), Physics 2 laboratory (PHYS 122L), Calculus 2 (MATH 128), Linear Algebra (MATH 114), Modern Physics (PHYS 124) and Introductory Measurement Lab (PHYS 160L)\n\nI’m most excited about taking the introductory measurement lab, which will teach me techniques and sequences for conducting experimental work. Additionally, this semester, I hope to improve my study techniques. I found that last semester I was wasting quite a lot of time, and my studying technique was slow. I also found I wasn't having a deep understanding of materials, which is likely why I wasn't getting the grades I wanted to. ",
@@ -222,6 +238,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 4,
     month: "Dec",
+    date: 20,
     year: "2024",
     title: "Wrapped up my 1A Term",
     description: "Finished my challenging 1A term ",
@@ -237,6 +254,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: 3,
     month: "Oct",
     year: "2024",
+    date: 5,
     title: "Competed in the 2024 Fall 5km Classic ",
     description: "Raced against 600+ people resulting in 7th (for my age bracket)",
     detailedDescription:
@@ -249,6 +267,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: 2,
     month: "Sept",
     year: "2024",
+    date: 4,
     title: "Started My First Semester at the University of Waterloo",
     description: "Began my undergraduate physics journey (1A semester)",
     detailedDescription:
@@ -262,6 +281,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: 1,
     month: "May",
     year: "2024",
+    date: 11,
     title: "Competed in the 2024 Spring Fling Competition",
     description: "Placed second in the 2024 Spring Fling Competition",
     detailedDescription:

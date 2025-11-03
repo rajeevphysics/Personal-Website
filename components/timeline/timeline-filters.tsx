@@ -7,8 +7,10 @@ import QuickSearch from "./quick-search"
 This is where title descriptions and filtering lies for the timeline page 
 
 
-*/
+Add in date to filter should go year -> month -> day if needed
+should be YDate = "" and then filter in timeline-events-list.tsx
 
+*/
 
 interface TimelineFiltersProps {
   searchQuery: string
