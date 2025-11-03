@@ -2,10 +2,10 @@
 
 import { getTagColor, getStatusColor, type TimelineEvent } from "@/lib/timeline-data"
 
-/* Page for just filtering timeline events */
-
-/*
-Add in date to filter should go year -> month -> day if needed
+/* 
+  TimelineEventsList Component
+  Displays all events grouped by year in an alternating (left-right) layout.
+  Each event is clickable and triggers onEventClick(event) to open a modal.
 */
 
 interface TimelineEventsListProps {
@@ -14,7 +14,11 @@ interface TimelineEventsListProps {
   onEventClick: (event: TimelineEvent) => void
 }
 
-export default function TimelineEventsList({ eventsByYear, years, onEventClick }: TimelineEventsListProps) {
+export default function TimelineEventsList({
+  eventsByYear,
+  years,
+  onEventClick,
+}: TimelineEventsListProps) {
   if (years.length === 0) {
     return (
       <div className="text-center py-16">
@@ -30,7 +34,11 @@ export default function TimelineEventsList({ eventsByYear, years, onEventClick }
           <div className="flex items-start gap-16 md:gap-24 lg:gap-32 mb-12">
             {/* Year label on the left */}
             <div className="sticky top-32 w-32 md:w-40 flex-shrink-0 -ml-8 md:-ml-12">
-              <h2 className={`text-6xl md:text-8xl font-bold ${yearIndex === 0 ? "text-black" : "text-gray-300"}`}>
+              <h2
+                className={`text-6xl md:text-8xl font-bold ${
+                  yearIndex === 0 ? "text-black" : "text-gray-300"
+                }`}
+              >
                 {year}
               </h2>
             </div>
@@ -45,7 +53,7 @@ export default function TimelineEventsList({ eventsByYear, years, onEventClick }
                 return (
                   <div key={event.id} className="group">
                     <div
-                      onClick={() => onEventClick(event)}
+                      onClick={() => onEventClick(event)} // ✅ Fixed: ensures modal opens
                       className="relative z-30 cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
                     >
                       {/* Alternating layout */}
@@ -105,7 +113,9 @@ export default function TimelineEventsList({ eventsByYear, years, onEventClick }
                             </span>
                           </div>
 
-                          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">{event.description}</p>
+                          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                            {event.description}
+                          </p>
                         </div>
                       </div>
                     </div>

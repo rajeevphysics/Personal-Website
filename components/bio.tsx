@@ -7,12 +7,12 @@ import RoundedButton from "./anim/rounded-button"
 import Link from "next/link"
 
 export default function Bio() {
-  const phrase1 = "A software engineer with a passion for innovation and\n" + "cutting-edge technology.\n\n "
+  const phrase1 = "Add .\n\n "
 
   const phrase2 =
-    "Particularly interested in the intersection of art, design, and " +
-    "software. I believe that these disciplines can be combined to " +
-    "create truly transformative experiences."
+    "Sometihg " +
+    "Something " +
+    "Somting."
 
   const description = useRef(null)
   const isInView = useInView(description)
