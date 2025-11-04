@@ -6,19 +6,18 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import CustomCursor from "@/components/custom-cursor"
 import MobileWarning from "@/components/mobile-warning"
-import SmoothScroll from "@/components/smoothscroll"
 import LoadingBar from "@/components/loading-bar"
+import SmoothScroll from "@/components/smoothscroll"
 import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Rajeev Persaud",
   description: "Portfolio by Rajeev Persaud",
-  generator: "Designed & coded by Rajeev Persaud",
+  generator: "Ifk",
   icons: {
-    icon: "favicon.svg",
+    icon: "/favicon.svg",
   },
 }
-
 
 export default function RootLayout({
   children,

@@ -48,7 +48,6 @@ export default function MenuCursor({ isMenuOpen }: MenuCursorProps) {
           link.textContent?.includes("Home") ||
           link.textContent?.includes("About") ||
           link.textContent?.includes("Timeline") ||
-          link.textContent?.includes("Goals") ||
           link.textContent?.includes("CV") ||
           link.textContent?.includes("Resume")
         ) {

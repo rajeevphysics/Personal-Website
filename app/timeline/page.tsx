@@ -1,14 +1,12 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import { motion } from "framer-motion"
 import Header from "@/components/header"
-import LoadingBar from "@/components/loading-bar"
 import Footer from "@/components/footer"
 import ScrollCursor from "@/components/scroll-cursor"
 import TimelineFilters from "@/components/timeline/timeline-filters"
 import TimelineEventsList from "@/components/timeline/timeline-events-list"
-import EventModal from "@/components/timeline/event-modal"
+import BottomSheetModal from "@/components/timeline/bottom-sheet-modal"
 import ScrollToTopButton from "@/components/timeline/scroll-to-top-button"
 import { timelineEvents, type TimelineEvent } from "@/lib/timeline-data"
 
@@ -21,18 +19,9 @@ export default function TimelinePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isArrowAbsolute, setIsArrowAbsolute] = useState(false)
   const [arrowAbsoluteTop, setArrowAbsoluteTop] = useState(0)
-  const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true)
-    }, 2500)
-
-    return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
@@ -138,16 +127,11 @@ export default function TimelinePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <LoadingBar />
       <Header />
       <ScrollCursor isScrollButtonVisible={showScrollTop} />
       <div className="h-24" />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showContent ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      <div>
         <TimelineFilters
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
@@ -167,9 +151,9 @@ export default function TimelinePage() {
             <TimelineEventsList eventsByYear={eventsByYear} years={years} onEventClick={setSelectedEvent} />
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      <EventModal
+      <BottomSheetModal
         selectedEvent={selectedEvent}
         onClose={() => setSelectedEvent(null)}
         onEventClick={setSelectedEvent}

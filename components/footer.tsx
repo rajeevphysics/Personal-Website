@@ -1,11 +1,10 @@
-import Link from "next/link"
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-16 px-6 relative">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="relative">
+          <div className="relative ">
             <h3 className="text-2xl font-bold mb-4 z-50">My Philosophy</h3>
             <p className="relative z-50 text-gray-300 leading-relaxed">
               In this new era of science, communications between researchers, institutions, policy makers, and the
@@ -13,14 +12,6 @@ export default function Footer() {
               same as speaking to the general public. I believe using more engaging verbal languages, web applications,
               and clear, simple data visualizations will improve public trust in science.
             </p>
-            <div className="mt-6 flex justify-center">
-              <Link
-                href="/goals"
-                className="bg-blue-500 text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-blue-600 transition-all duration-300 inline-block relative z-30"
-              >
-                See My Goals
-              </Link>
-            </div>
           </div>
 
           <div className="flex flex-col items-end text-right">
@@ -41,7 +32,6 @@ export default function Footer() {
               >
                 CV
               </a>
-
               <a
                 href="https://github.com/rajeevphysics"
                 target="_blank"
@@ -55,8 +45,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm relative z-30">
-          © {new Date().getFullYear()} Rajeev Persaud. All rights reserved. 
-          
+          © {new Date().getFullYear()} Rajeev Persaud. All rights reserved.
         </div>
       </div>
     </footer>
