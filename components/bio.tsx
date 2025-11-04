@@ -9,16 +9,14 @@ export default function Bio() {
     "\n I believe that these disciplines will lead to new " +
     "discoveries about the world."
 
+
   const handleAboutClick = () => {
-    if (typeof window !== "undefined") {
-      // Try to use Lenis if available
-      if ((window as any).lenis) {
-        ;(window as any).lenis.scrollTo(0, { immediate: true })
-      }
-      // Also use native scroll as fallback
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" })
-    }
+    // Immediately scroll to top
+    window.scrollTo(0, 0)
+
+    // Also try with Lenis if available
   }
+
 
   return (
     <div className="relative flex flex-col justify-center gap-8 p-8 pb-24 sm:mt-[50px] sm:flex-row sm:p-20 sm:pb-32">
