@@ -1,30 +1,53 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
 export default function LoadingBar() {
   const [isLoading, setIsLoading] = useState(true)
+  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    // Simulate loading completion after a short delay
+    if (!isLoading) return
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(progressInterval)
+          return 100
+        }
+        return prev + Math.random() * 15
+      })
+    }, 100)
+
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 1500)
+    }, 2000)
 
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (!isLoading) return null
+    return () => {
+      clearInterval(progressInterval)
+      clearTimeout(timer)
+    }
+  }, [isLoading])
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 
-      via-blue-600 to-blue-500 z-[10000] origin-left shadow-lg shadow-blue-500/50"
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1.5, ease: "easeInOut" }}
-    />
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          className="fixed inset-0 bg-white z-[10000] flex items-center justify-center"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-sans tracking-tight">Rajeev Persaud</h1>
+          </div>
+
+          <div className="fixed bottom-8 right-8">
+            <p className="text-lg md:text-xl font-sans tracking-wide">LOADING {Math.min(Math.round(progress), 100)}%</p>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

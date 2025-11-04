@@ -3,7 +3,6 @@
 import { LetterCollision } from "@/textAnimations/scrollText"
 import { useEffect, useState } from "react"
 import { ChevronDown } from "lucide-react"
-import { motion } from "framer-motion"
 
 export default function Hero() {
   const [showScrollIcon, setShowScrollIcon] = useState(true)
@@ -31,9 +30,9 @@ export default function Hero() {
 
   return (
     <div className="relative pt-5 overflow-hidden min-h-screen">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: showContent ? 1 : 0 }} transition={{ duration: 0.8 }}>
+      <div>
         <LetterCollision />
-      </motion.div>
+      </div>
 
       <div
         className={`fixed bottom-8 left-1/2 -translate-x-1/2 transition-opacity duration-300 ${

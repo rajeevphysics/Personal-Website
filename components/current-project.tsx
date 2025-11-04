@@ -1,112 +1,125 @@
 "use client"
-
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { latestProject, getTagColor } from "@/lib/current-project-data"
-import { useEffect, useState } from "react"
-
-// This page is for current event visable through the homepage
+import { motion, useInView } from "framer-motion"
+import { getTagColor, getStatusColor, timelineEvents, type TimelineEvent } from "@/lib/timeline-data"
+import { useEffect, useState, useRef } from "react"
+import BottomSheetModal from "@/components/timeline/bottom-sheet-modal"
+import RoundedButton from "@/components/anim/rounded-button"
 
 export default function CurrentProject() {
   const [showContent, setShowContent] = useState(false)
+  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)
+  const buttonRef = useRef(null)
+  const isButtonInView = useInView(buttonRef, { once: true })
+
+  const latestEvents: TimelineEvent[] = [...timelineEvents].sort((a, b) => b.id - a.id).slice(0, 3)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true)
-    }, 2500)
-
+    const timer = setTimeout(() => setShowContent(true), 500)
     return () => clearTimeout(timer)
   }, [])
 
   return (
-    <section className="relative min-h-screen bg-white py-24 px-8 md:px-16 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showContent ? 1 : 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-16"
-        >
-          <h2 className="relative z-50 text-6xl md:text-7xl lg:text-8xl font-bold text-black text-left">
-            What I'm Doing Now
-          </h2>
-        </motion.div>
+    <section className="relative min-h-screen bg-white pt-8 pb-24 px-8 md:px-16 lg:px-24">
+      <div className="flex items-start gap-16 md:gap-24 lg:gap-32 mb-12">
+        {/* Sticky Year Label */}
+        <div className="sticky top-32 w-32 md:w-40 flex-shrink-0 -ml-8 md:-ml-12">
+          <h2 className="text-6xl md:text-8xl font-bold text-black">2025</h2>
+        </div>
 
-        {/* Fancy project card */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-30 group"
-        >
-          <Link href="/timeline" className="block">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-blue-500/20 hover:scale-[1.02]">
-              {/* Image with overlay gradient */}
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <img
-                  src={latestProject.image || "/placeholder.svg"}
-                  alt={latestProject.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        {/* Latest Projects (Timeline Style) */}
+        <div className="flex-1 space-y-16">
+          <div className="border-t-2 border-gray-300 mb-12" />
 
-                {/* Tags and status overlay */}
-                <div className="absolute top-6 left-6 flex gap-2 flex-wrap">
-                  {latestProject.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`${getTagColor(tag)} px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide backdrop-blur-sm`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                  <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
-                    {latestProject.status}
-                  </span>
-                </div>
+          {latestEvents.map((event, index) => {
+            const isReversed = index % 2 === 1
 
-                {/* Content overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-blue-400 font-bold text-lg">
-                      <span className="w-12 h-0.5 bg-blue-400" />
-                      <span>
-                        {latestProject.month} {latestProject.year}
+            return (
+              <motion.div
+                key={event.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 50 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                onClick={() => setSelectedEvent(event)}
+                className="group cursor-pointer"
+              >
+                <div
+                  className={`flex flex-col md:flex-row gap-8 items-start ${isReversed ? "md:flex-row-reverse" : ""}`}
+                >
+                  {/* Image */}
+                  <div className="relative w-full md:w-1/2 aspect-video overflow-hidden rounded-lg">
+                    <img
+                      src={event.image || "/placeholder.svg"}
+                      alt={event.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {event.ref && (
+                      <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                        {event.ref}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Text */}
+                  <div className={`flex-1 space-y-4 ${isReversed ? "text-right md:pr-4" : "text-left md:pl-4"}`}>
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight group-hover:text-blue-500 transition-colors">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      {event.month} {event.date} {event.year}
+                    </p>
+
+                    <div className={`flex gap-2 flex-wrap ${isReversed ? "justify-end" : ""}`}>
+                      {event.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className={`${getTagColor(
+                            tag,
+                          )} px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      <span className={`${getStatusColor(event.status)} px-3 py-1 rounded-full text-xs font-semibold`}>
+                        {event.status}
                       </span>
                     </div>
-                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                      {latestProject.title}
-                    </h3>
-                    <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl">
-                      {latestProject.description}
-                    </p>
+
+                    <p className="text-lg md:text-xl text-gray-600 leading-relaxed">{event.description}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
+            )
+          })}
 
-              {/* Animated border effect */}
-              <div className="absolute inset-0 rounded-2xl border-4 border-transparent group-hover:border-blue-500 transition-all duration-500" />
-            </div>
-
-            {/* Call to action */}
-            <div className="mt-8 flex items-center justify-center">
-              <div className="inline-flex items-center gap-3 text-blue-500 font-bold text-xl group-hover:gap-5 transition-all duration-300">
-                <span>View Full Timeline</span>
-                <svg
-                  className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </div>
-          </Link>
-        </motion.div>
+          <div ref={buttonRef} className="border-t-2 border-gray-300 mt-20 pt-12 flex justify-center">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{
+                scale: isButtonInView ? 1 : 0,
+                opacity: isButtonInView ? 1 : 0,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
+            >
+              <RoundedButton
+                href="/timeline"
+                className="px-8 py-3 bg-white text-black font-medium text-base rounded-full border-2 border-orange-400 hover:border-orange-500 transition-colors duration-300"
+              >
+                View Full Timeline
+              </RoundedButton>
+            </motion.div>
+          </div>
+        </div>
       </div>
+
+      <BottomSheetModal
+        selectedEvent={selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+        onEventClick={setSelectedEvent}
+      />
     </section>
   )
 }

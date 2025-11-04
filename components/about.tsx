@@ -1,7 +1,8 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -11,131 +12,45 @@ export default function About() {
     offset: ["start end", "end start"],
   })
 
-  const underline1 = useTransform(scrollYProgress, [0.35, 0.42], [0, 1])
-  const underline2 = useTransform(scrollYProgress, [0.4, 0.47], [0, 1])
-  const underline3 = useTransform(scrollYProgress, [0.48, 0.54], [0, 1])
-  const underline4 = useTransform(scrollYProgress, [0.52, 0.58], [0, 1])
-  const underline5 = useTransform(scrollYProgress, [0.60, 0.66], [0, 1])
-
-  const text =
-    "I'm a second-year Physics student at the University of Waterloo with a strong interest in experimental work. Although my intrest are very wide I have the most intrest in optical systems  and condensed . I plan to pursue graduate research in a related field. Beyond research, I'm deeply interested in improving  the communication of scientific ideas  among researchers and to the general public. Whether that be visualizing data, creating an interactive website or rewording complex phrases."
-
-  const words = text.split(" ")
-
   return (
-    <section id="about" ref={containerRef} className="relative min-h-[200vh] bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="about" ref={containerRef} className="relative min-h-screen bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <h2 className="relative z-50 text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold mb-16 md:mb-24 text-black text-left">
-          About Me
-        </h2>
-        <div className="relative z-50 max-w-5xl space-y-16 md:space-y-24">
-          <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed text-black text-left text-pretty">
-            {words.map((word, index) => {
-              const isOpticalSystems = word === "optical" || (words[index - 1] === "optical" && word === "systems")
-              const isCondensedMatter = word === "condensed" || (words[index - 1] === "condensed" && word === "matter,")
-              const isImproving = word === "improving"
-              const isScientificIdeas = word === "scientific" || (words[index - 1] === "scientific" && word === "ideas")
-              const isGeneralPublic = word === "general" || (words[index - 1] === "general" && word === "public.")
+        <div className="mb-16 md:mb-24">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-black text-center z-50">I'm Rajeev Persaud</h1>
+        </div>
 
-              if (isOpticalSystems) {
-                if (word === "optical") {
-                  return (
-                    <span key={index} className="relative inline-block">
-                      <span className="whitespace-nowrap">optical systems </span>
-                      <motion.span
-                        className="absolute bottom-0 left-0 h-[5px] bg-blue-500"
-                        style={{
-                          width: "100%",
-                          scaleX: underline1,
-                          transformOrigin: "left",
-                        }}
-                      />
-                    </span>
-                  )
-                } else {
-                  return null
-                }
-              }
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
+          {/* Left column - Image */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden">
+              <Image
+                src="grad.jpeg"
+                alt="Rajeev Persaud graduation photo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
 
-              if (isCondensedMatter) {
-                if (word === "condensed") {
-                  return (
-                    <span key={index} className="relative inline-block">
-                      <span className="whitespace-nowrap">condensed matter </span>
-                      <motion.span
-                        className="absolute bottom-0 left-0 h-[5px] bg-blue-500"
-                        style={{
-                          width: "100%",
-                          scaleX: underline2,
-                          transformOrigin: "left",
-                        }}
-                      />
-                    </span>
-                  )
-                } else {
-                  return null
-                }
-              }
+          {/* Right column - Text content */}
+          <div className="space-y-8 text-black z-50">
+            <p className="text-xl md:text-2xl leading-relaxed">
+              An undergraduate experimental physicist with a passion for understanding physical systems through hands-on research and instrumentation.
+            </p>
 
-              if (isImproving) {
-                return (
-                  <span key={index} className="relative inline-block">
-                    <span className="whitespace-nowrap">improving</span>
-                    <motion.span
-                      className="absolute bottom-0 left-0 h-[5px] bg-blue-500"
-                      style={{
-                        width: "100%",
-                        scaleX: underline3,
-                        transformOrigin: "left",
-                      }}
-                    />
-                  </span>
-                )
-              }
+            <p className="text-xl md:text-2xl leading-relaxed">
+              I have experience contributing to experimental projects in fields such as rocketry, sensing systems, and optical instrumentation, building tools that translate theoretical principles into real-world data.
+            </p>
 
-              if (isScientificIdeas) {
-                if (word === "scientific") {
-                  return (
-                    <span key={index} className="relative inline-block">
-                      <span className="whitespace-nowrap">scientific ideas</span>
-                      <motion.span
-                        className="absolute bottom-0 left-0 h-[5px] bg-blue-500"
-                        style={{
-                          width: "100%",
-                          scaleX: underline4,
-                          transformOrigin: "left",
-                        }}
-                      />
-                    </span>
-                  )
-                } else {
-                  return null
-                }
-              }
+            <p className="text-xl md:text-2xl leading-relaxed">
+              Currently pursuing my studies at the University of Waterloo, I am focused on developing strong experimental and analytical skills while contributing to student research initiatives and technical projects.
+            </p>
 
-              if (isGeneralPublic) {
-                if (word === "general") {
-                  return (
-                    <span key={index} className="relative inline-block">
-                      <span className="whitespace-nowrap">general public. </span>
-                      <motion.span
-                        className="absolute bottom-0 left-0 h-[5px] bg-blue-500"
-                        style={{
-                          width: "100%",
-                          scaleX: underline5,
-                          transformOrigin: "left",
-                        }}
-                      />
-                    </span>
-                  )
-                } else {
-                  return null
-                }
-              }
-
-              return <span key={index}>{word} </span>
-            })}
-          </p>
+            <p className="text-xl md:text-2xl leading-relaxed">
+              My work spans simulation, lab-based experimentation, and hardware design, driven by curiosity and a commitment to turning scientific ideas into measurable outcomes.
+            </p>
+          </div>
         </div>
       </div>
     </section>

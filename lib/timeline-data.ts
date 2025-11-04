@@ -33,8 +33,10 @@ export interface TimelineEvent {
 }
 
 export const timelineEvents: TimelineEvent[] = [
+
+
   {
-    id: 17,
+    id: 20,
     month: "Oct",
     date: 27,
     year: "2025",
@@ -46,9 +48,20 @@ export const timelineEvents: TimelineEvent[] = [
     status: "Started",
 
   },
-
+  {
+    id: 19,
+    month: "Oct",
+    date: 20,
+    year: "2025",
+    title: "Completed Chemical Waste Segregation Safety Certification",
+    description: "Finished Chemical Waste Segregation Safety Certification",
+    detailedDescription: "Chemical waste segregation is the standard practices for disposing of chemicals in a safe manner. This was done specifically for rocktry requirements, in the event that I will need to use chemicals. ",
+    image: "cwsaftety.jpeg",
+    tags: ["Certification", "Research" ],
+    status: "Completion",
+  },
 {
-    id: 16,
+    id: 18,
     month: "Oct",
     date: 16,
     year: "2025",
@@ -60,7 +73,7 @@ export const timelineEvents: TimelineEvent[] = [
     status: "Completion",
   },
 {
-    id: 15,
+    id: 17,
     month: "Oct",
     date: 18,
     year: "2025",
@@ -72,7 +85,7 @@ export const timelineEvents: TimelineEvent[] = [
     status: "Completion",
   },
 {
-    id: 14,
+    id: 16,
     month: "Oct",
     date: 15,
     year: "2025",
@@ -84,7 +97,7 @@ export const timelineEvents: TimelineEvent[] = [
     status: "Completion",
   },
 {
-    id: 13,
+    id: 15,
     month: "Oct",
     date: 8,
     year: "2025",
@@ -98,7 +111,7 @@ export const timelineEvents: TimelineEvent[] = [
     fullref: "https://uwaterloo.ca/about/history",
   },
 {
-    id: 12,
+    id: 14,
     month: "Oct",
     date: 1,
     year: "2025",
@@ -113,7 +126,7 @@ export const timelineEvents: TimelineEvent[] = [
     fullref: "https://www.ctvnews.ca/kitchener/article/university-of-waterloo-students-aim-for-the-stars-with-canadas-first-ever-liquid-rocket/",
   },
   {
-    id: 11,
+    id: 13,
     month: "Oct",
     year: "2025",
     date: 5,
@@ -128,7 +141,7 @@ export const timelineEvents: TimelineEvent[] = [
     fullref: "https://science.nasa.gov/uncategorized/2025-nasa-space-apps/",
   },
 {
-    id: 10,
+    id: 12,
     month: "Oct",
     date: 4,
     year: "2025",
@@ -143,7 +156,7 @@ export const timelineEvents: TimelineEvent[] = [
     fullref: "https://science.nasa.gov/uncategorized/2025-nasa-space-apps/",
   },
 {
-    id: 9,
+    id: 11,
     month: "Sept",
     date: 25,
     year: "2025",
@@ -155,6 +168,20 @@ export const timelineEvents: TimelineEvent[] = [
     status: "Started",
     ref: "Image taken from Rocktry UW Page",
     fullref: "https://uwaterloo.ca/mechanical-mechatronics-engineering/news/waterloo-rocketry-team-launches-canadas-first-liquid-rocket",
+  },
+  {
+    id: 10,
+    month: "Sept",
+    date: 15,
+    year: "2025",
+    title: "Started Volunteering as a Physics Tutor in Waterloo",
+    description: "Started volunteering as a physics tutor at the University of Waterloo's Physics & Astronomy Tutorial Centre",
+    detailedDescription: "The Waterloo Physics Tutorial Centre was started in 2023 and aims to be a centre for help with science-based courses from TAs, professors, and volunteer tutors. In my first year as an undergraduate, I used the physics tutorial centre quite a lot for help with my courses. \n\n Now that I have begun my first semester of my second year, I thought it would be great to help out first-years and pay it forward. I plan to set a aside a few hours a week to help students with their physics courses. ",
+    image: "tutcent.jpg",
+    tags: ["Volunteering", "Competition", "Group" ],
+    status: "Started",
+    ref: "Image taken from UW Physics Tutorial Centre Page",
+    fullref: "https://uwaterloo.ca/physics-astronomy/undergraduate-students/physics-tutorial-centre",
   },
 {
     id: 9,
@@ -177,7 +204,7 @@ export const timelineEvents: TimelineEvent[] = [
     title: "V1.1.2 of Math & Matter Released",
     description: "Released V1.1.2 of my Math & Matter educational website, last update before starting 2A semester",
     detailedDescription: "My 2A semester begins soon, and the last major update for Math & Matter is V.1.1.2, where most concepts from calculus 1, physics 1 & 2, and linear algebra of complete on my website. I have gotten amazing feedback from my community on making physics concepts easier to understand. \n\nStudents who use my site to help them derive and understand equations and proofs say it saves them a lot of time. Most of the time, it's not that they don't understand how to do rigorous derivations or proofs, but rather that they are missing some assumption that is necessary for completing the derivation or proof. \n\nI still have quite a lot of work left to do. Only about ¾ of my first year content is complete on the page.",
-    image: "mmath2.png",
+    image: "mmath2.jpg",
     tags: ["Education", "Personal Project" ],
     status: "Update",
     statusId: "obi",
@@ -207,8 +234,8 @@ export const timelineEvents: TimelineEvent[] = [
     tags: ["Education"],
     status: "Ended",
     statusId: "edusem",
-    ref: "Photo taken from the Waterloo Wikipedia Page",
-    fullref: "https://en.wikipedia.org/wiki/University_of_Waterloo_station",
+    ref: "Photo taken from the WUSA Page",
+    fullref: "https://wusa.ca/preparing-for-winter-in-canada/",
   },
 {
     id: 6,
@@ -230,8 +257,10 @@ export const timelineEvents: TimelineEvent[] = [
     title: "Started my 1B Term",
     description: "Began my winter 1B term",
     detailedDescription: "My 1B semester marks the first semester I will take during a winter term. The courses taken this semester are Calculus-Based Physics 2 (PHYS 122), Physics 2 laboratory (PHYS 122L), Calculus 2 (MATH 128), Linear Algebra (MATH 114), Modern Physics (PHYS 124) and Introductory Measurement Lab (PHYS 160L)\n\nI’m most excited about taking the introductory measurement lab, which will teach me techniques and sequences for conducting experimental work. Additionally, this semester, I hope to improve my study techniques. I found that last semester I was wasting quite a lot of time, and my studying technique was slow. I also found I wasn't having a deep understanding of materials, which is likely why I wasn't getting the grades I wanted to. ",
-    image: "2sem.jpg",
+    image: "wintersemv2.jpg",
     tags: ["Education"],
+    ref: "Image taken from UW Winter Page",
+    fullref: "https://uwaterloo.ca/news/media/rendering-winter-wonderland",
     status: "Started",
     statusId: "edusem",
   },
@@ -259,7 +288,7 @@ export const timelineEvents: TimelineEvent[] = [
     description: "Raced against 600+ people resulting in 7th (for my age bracket)",
     detailedDescription:
       "The Fall 5km Classic is a race run by over 600 people. It was my first race away from home. Luckily, I was joined by many students who were hosted by Prof. Heidi Engelhardt and the University of Waterloo in transporting all of us to the race spot. Although I expected to get a finishing placement (and get another medal), I finished in 7th place for my overall age bracket, which I was pretty happy with. ",
-    image: "fallrace.jpg",
+    image: "frace.jpg",
     tags: ["Athletic Competition"],
     status: "Completion",
   },
