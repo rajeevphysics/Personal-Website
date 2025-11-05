@@ -34,10 +34,7 @@ export default function Bio() {
           Currently a 2nd Year student @ The University of Waterloo .
         </p>
         <p className="m-0 text-lg font-light">
-          I’ve led experimental design and simulation projects in areas like rocketry guidance and
-          precision sensing, earning several awards along the way. I’m driven by the challenge of
-          turning theory into hardware and data, and I’m constantly pushing toward new ideas that
-          can create real-world impact.
+          I’ve led educational and simulation-based projects focused on topics like gravitational modeling and precision sensing, while also contributing to rocketry guidance research. I’m driven by the challenge of translating complex theoretical ideas into practical experiments and data, and I enjoy making these concepts accessible to others through clear communication and relatable analogies to inspire real-world understanding and impact
         </p>
         <div data-scroll-speed={0.1}>
           <RoundedButton
