@@ -14,14 +14,14 @@ export default function Bio() {
   return (
     <div className="relative flex flex-col justify-center gap-8 p-8 pb-24 sm:mt-[50px] sm:flex-row sm:p-20 sm:pb-32">
       <div className="space-y-1 z-50">
-        <p className="m-0 gap-2 leading-snug sm:text-4xl  mb-4 ">
+        <p className="m-0 gap-2 leading-snug text-2xl sm:text-4xl  mb-4 ">
           {phrase1.split(" ").map((word, index) => (
             <span key={index} className="relative mr-1.5 inline-flex">
               {word}
             </span>
           ))}
         </p>
-        <p className="m-0 gap-2 leading-snug sm:text-4xl">
+        <p className="m-0 gap-2 leading-snug text-2xl sm:text-4xl">
           {phrase2.split(" ").map((word, index) => (
             <span key={index} className="relative mr-1.5 inline-flex">
               {word}
@@ -30,11 +30,11 @@ export default function Bio() {
         </p>
       </div>
       <div>
-        <p className="m-0 pb-3 font-light sm:text-lg z-50">
-          Currently a 2nd Year student @ The University of Waterloo .
+        <p className="m-0 pb-3 font-light text-base sm:text-large z-50">
+          A 2nd Year student @ The University of Waterloo .
         </p>
-        <p className="m-0 text-lg font-light">
-          I’ve led educational and simulation-based projects focused on topics like gravitational modeling and precision sensing, while also contributing to rocketry guidance research. I’m driven by the challenge of translating complex theoretical ideas into practical experiments and data, and I enjoy making these concepts accessible to others through clear communication and relatable analogies to inspire real-world understanding and impact
+        <p className="m-0 text-base font-light sm:text-large z-50">
+          I’ve led educational and simulation-based projects focused on topics like gravitational modeling and precision sensing, while also contributing to rocketry payload resarch and design. 
         </p>
         <div data-scroll-speed={0.1}>
           <RoundedButton
