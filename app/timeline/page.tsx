@@ -23,13 +23,13 @@ export default function TimelinePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  
+
    setTimeout(() => {
         window.scrollTo(0, 0)
         if (typeof window !== "undefined" && (window as any).lenis) {
           ;(window as any).lenis.scrollTo(0, { immediate: true })
         }
-      }, 100),
+      }, 400),
 
   useEffect(() => {
     const handleScroll = () => {
