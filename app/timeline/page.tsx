@@ -21,15 +21,48 @@ export default function TimelinePage() {
   const [arrowAbsoluteTop, setArrowAbsoluteTop] = useState(0)
 
   useEffect(() => {
+    // Immediate attempt
     window.scrollTo(0, 0)
-  }, [])
-  
-   setTimeout(() => {
+    if (typeof window !== "undefined" && (window as any).lenis) {
+      ;(window as any).lenis.scrollTo(0, { immediate: true })
+    }
+
+    // Multiple retries with increasing delays
+    const timers = [
+      setTimeout(() => {
         window.scrollTo(0, 0)
         if (typeof window !== "undefined" && (window as any).lenis) {
           ;(window as any).lenis.scrollTo(0, { immediate: true })
         }
       }, 100),
+
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+        if (typeof window !== "undefined" && (window as any).lenis) {
+          ;(window as any).lenis.scrollTo(0, { immediate: true })
+        }
+      }, 300),
+
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+        if (typeof window !== "undefined" && (window as any).lenis) {
+          ;(window as any).lenis.scrollTo(0, { immediate: true })
+        }
+      }, 500),
+
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+        if (typeof window !== "undefined" && (window as any).lenis) {
+          ;(window as any).lenis.scrollTo(0, { immediate: true })
+        }
+      }, 800),
+    ]
+
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer))
+    }
+  }, []) 
+
 
   useEffect(() => {
     const handleScroll = () => {

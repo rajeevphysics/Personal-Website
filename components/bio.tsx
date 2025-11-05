@@ -10,13 +10,6 @@ export default function Bio() {
     "discoveries about the world."
 
 
-  const handleAboutClick = () => {
-    // Immediately scroll to top
-    window.scrollTo(0, 0)
-
-    // Also try with Lenis if available
-  }
-
 
   return (
     <div className="relative flex flex-col justify-center gap-8 p-8 pb-24 sm:mt-[50px] sm:flex-row sm:p-20 sm:pb-32">
@@ -49,7 +42,6 @@ export default function Bio() {
         <div data-scroll-speed={0.1}>
           <RoundedButton
             href="/about"
-            onClick={handleAboutClick}
             className="absolute ml-56 mt-6 flex h-[100px] w-[100px] cursor-pointer items-center justify-center rounded-full bg-[#e74c3c] text-white sm:ml-16 sm:mt-16 sm:h-[200px] sm:w-[200px]"
           >
             About me
