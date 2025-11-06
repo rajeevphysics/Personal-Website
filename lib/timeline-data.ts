@@ -34,18 +34,19 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
 
-  // {
-  //   id: 21,
-  //   month: "Nov",
-  //   date: 5,
-  //   year: "2025",
-  //   title: "Prototyping a PCB for Rocketry Payload",
-  //   description: "Started prototyping, desgining and publishing a PCB for the Rocketry Payload subteam",
-  //   detailedDescription: "As part of the Rocketry Payload subteam, I have taken on the task of designing a custom PCB (Printed Circuit Board) to meet the specific needs of our payload experiment. This involves selecting appropriate components, designing the circuit layout, and ensuring that the PCB meets all necessary specifications for functionality and safety during rocket launch and operation.\n\nThe PCB will be responsible for managing data acquisition from various sensors, controlling communication with the ground station, and ensuring reliable power distribution throughout the payload system. I am utilizing industry-standard software tools for PCB design and simulation to ensure that our design is robust and efficient.\n\nThis project is a critical step in advancing our payload capabilities and contributing to the overall success of the rocketry team's mission.",
-  //   image: "pcbdesign.png",
-  //   tags: [ "Competition", "Group", "Technology" ],
-  //   status: "Update",
-  // },
+  {
+    id: 21,
+    month: "Nov",
+    date: 5,
+    year: "2025",
+    title: "Prototyping a PCB for Rocketry Payload",
+    description: "Started prototyping, desgining and publishing a PCB for the Rocketry Payload subteam",
+    detailedDescription: "As part of the Rocketry Payload subteam, I have taken on the task of designing a custom PCB (Printed Circuit Board) to meet the specific needs of our fiber optic gyroscope experiment. This involves selecting appropriate components, designing the circuit layout, and ensuring that the PCB meets all necessary specifications for functionality and safety during rocket launch and operation.\n\nThe PCB will be responsible for managing data acquisition from various sensors, controlling communication with the ground station, and ensuring reliable power distribution throughout the payload system. I am utilizing industry-standard software tools for PCB design such as kiCad and simulations to ensure that our design is robust and efficient.\n\nThis project is a critical step in advancing our payload capabilities and contributing to the overall success of the rocketry team's mission\n\n Some of the papers and textbooks I’m reading for designing this PCB are:\n\nThe Fiber-Optic Gyroscop by Hervé Lefèvre \n\nThe Art of Electronics by Paul Horowitz & Winfield Hill \n\nHigh-Speed Digital Design: A Handbook of Black Magic by Howard Johnson & Martin Graham",
+    image: "rpcb.jpg",
+    tags: [ "Competition", "Group", "Technology" ],
+    status: "Update",
+    statusId: "rocketry",
+  },
 
   {
     id: 20,
@@ -71,6 +72,7 @@ export const timelineEvents: TimelineEvent[] = [
     image: "cwsaftety.jpeg",
     tags: ["Certification", "Research" ],
     status: "Completion",
+    statusId: "rocketry",
   },
 {
     id: 18,
@@ -83,6 +85,7 @@ export const timelineEvents: TimelineEvent[] = [
     image: "csafty.jpeg",
     tags: ["Certification", "Research" ],
     status: "Completion",
+    statusId: "rocketry",
   },
 {
     id: 17,
@@ -95,6 +98,7 @@ export const timelineEvents: TimelineEvent[] = [
     image: "eshop.jpg",
     tags: ["Certification", "Research" ],
     status: "Completion",
+    statusId: "rocketry",
   },
 {
     id: 16,
@@ -105,6 +109,7 @@ export const timelineEvents: TimelineEvent[] = [
     description: "Finished WHMIS 2015 certification for handling hazardous materials",
     detailedDescription: "WHMIS 2015 is the standard procedure and precautions that anyone should be aware of when handling chemicals that could be dangerous to humans or materials. I have completed WHMIS 2015 for my requirements for rocktry, but it is also applicable to research and industry. ",
     image: "wsafty.jpeg",
+    statusId: "rocketry",
     tags: ["Certification", "Research" ],
     status: "Completion",
   },
@@ -178,6 +183,7 @@ export const timelineEvents: TimelineEvent[] = [
     image: "rocket1.jpg",
     tags: ["Volunteering", "Competition", "Group" ],
     status: "Started",
+    statusId: "rocketry",
     ref: "Image taken from Rocktry UW Page",
     fullref: "https://uwaterloo.ca/mechanical-mechatronics-engineering/news/waterloo-rocketry-team-launches-canadas-first-liquid-rocket",
   },
