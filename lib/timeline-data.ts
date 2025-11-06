@@ -34,6 +34,18 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
 
+  // {
+  //   id: 21,
+  //   month: "Nov",
+  //   date: 5,
+  //   year: "2025",
+  //   title: "Prototyping a PCB for Rocketry Payload",
+  //   description: "Started prototyping, desgining and publishing a PCB for the Rocketry Payload subteam",
+  //   detailedDescription: "As part of the Rocketry Payload subteam, I have taken on the task of designing a custom PCB (Printed Circuit Board) to meet the specific needs of our payload experiment. This involves selecting appropriate components, designing the circuit layout, and ensuring that the PCB meets all necessary specifications for functionality and safety during rocket launch and operation.\n\nThe PCB will be responsible for managing data acquisition from various sensors, controlling communication with the ground station, and ensuring reliable power distribution throughout the payload system. I am utilizing industry-standard software tools for PCB design and simulation to ensure that our design is robust and efficient.\n\nThis project is a critical step in advancing our payload capabilities and contributing to the overall success of the rocketry team's mission.",
+  //   image: "pcbdesign.png",
+  //   tags: [ "Competition", "Group", "Technology" ],
+  //   status: "Update",
+  // },
 
   {
     id: 20,
