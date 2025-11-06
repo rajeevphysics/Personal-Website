@@ -19,7 +19,7 @@ export default function Bio() {
       ref={description}
       className="relative flex flex-col justify-center gap-8 p-8 pb-24 sm:mt-[50px] sm:flex-row sm:p-20 sm:pb-32"
     >
-      <div className="space-y-1 font-sans">
+      <div className="space-y-1 font-sans z-50">
         <p className="m-0 gap-2 text-2xl leading-snug sm:text-4xl">
           {phrase1.split(" ").map((word, index) => (
             <span key={index} className="relative mr-1.5 inline-flex overflow-hidden">
@@ -49,7 +49,7 @@ export default function Bio() {
           animate={isInView ? "open" : "closed"}
           className="m-0 pb-3 text-base font-light sm:text-lg"
         >
-          Currently a 2nd Year student @ The University of Waterloo .
+          A 2nd Year student @ The University of Waterloo .
         </motion.p>
         <motion.p
           variants={opacity}
