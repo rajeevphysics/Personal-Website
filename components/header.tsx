@@ -146,7 +146,7 @@ export default function Header() {
             Timeline & Projects
           </Link>
           <a
-            href="/cv.pdf"
+            href="/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)}
