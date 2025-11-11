@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 import { ArrowUp, ArrowUpRight } from "lucide-react"
+import { useMobile } from "@/hooks/use-mobile"
 
 type CursorState = "default" | "internal" | "external"
 
@@ -13,6 +14,7 @@ interface MenuCursorProps {
 export default function MenuCursor({ isMenuOpen }: MenuCursorProps) {
   const [cursorState, setCursorState] = useState<CursorState>("default")
   const [isMounted, setIsMounted] = useState(false)
+  const isMobile = useMobile()
 
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
@@ -83,7 +85,7 @@ export default function MenuCursor({ isMenuOpen }: MenuCursorProps) {
     }
   }, [cursorState, cursorX, cursorY, isMenuOpen])
 
-  if (!isMounted || typeof window === "undefined" || window.innerWidth < 768 || !isMenuOpen) {
+  if (!isMounted || typeof window === "undefined" || isMobile || !isMenuOpen) {
     return null
   }
 

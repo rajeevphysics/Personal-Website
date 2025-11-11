@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 import { ArrowUp, ArrowUpRight, ArrowDown } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { useMobile } from "@/hooks/use-mobile"
 
 type CursorState = "default" | "internal" | "external" | "menu" | "goals-down"
 
@@ -12,12 +14,32 @@ export default function CustomCursor() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isHoveringMenu, setIsHoveringMenu] = useState(false)
   const [isHoveringGoals, setIsHoveringGoals] = useState(false)
+  const pathname = usePathname()
+  const isMobile = useMobile()
 
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
   const springConfig = { damping: 25, stiffness: 500 }
   const cursorXSpring = useSpring(cursorX, springConfig)
   const cursorYSpring = useSpring(cursorY, springConfig)
+
+  useEffect(() => {
+    setCursorState("default")
+    setIsHoveringMenu(false)
+    setIsHoveringGoals(false)
+
+    // Force a re-check of what's under the cursor after a brief delay
+    const timer = setTimeout(() => {
+      const event = new MouseEvent("mousemove", {
+        clientX: cursorX.get() + 20,
+        clientY: cursorY.get() + 20,
+        bubbles: true,
+      })
+      document.dispatchEvent(event)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [pathname])
 
   useEffect(() => {
     setIsMounted(true)
@@ -135,14 +157,14 @@ export default function CustomCursor() {
     }
   }, [cursorState, cursorX, cursorY])
 
-  if (!isMounted || typeof window === "undefined" || window.innerWidth < 768 || isMenuOpen) {
+  if (!isMounted || typeof window === "undefined" || isMobile || isMenuOpen) {
     return null
   }
 
   return (
     <motion.div
       className={`pointer-events-none fixed left-0 top-0 flex items-center justify-center ${
-        isHoveringMenu || isHoveringGoals ? "z-[105]" : "z-40"
+        isHoveringMenu || isHoveringGoals ? "z-[10001]" : "z-[10001]"
       }`}
       style={{
         translateX: cursorXSpring,
