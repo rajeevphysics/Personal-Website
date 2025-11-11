@@ -172,7 +172,7 @@ export default function BottomSheetModal({ selectedEvent, onClose, onEventClick 
                               </span>
                             </div>
                             <p className="text-sm text-gray-600">
-                              {event.month} {event.year}
+                              {event.month} {event.date} {event.year}
                             </p>
                           </div>
                         </div>

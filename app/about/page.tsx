@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import Header from "@/components/header"
-import About from "@/components/about"
+import About from "@/components/about/about"
 import Footer from "@/components/footer"
 import LoadingBar from "@/components/loading-bar"
 

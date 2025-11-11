@@ -29,7 +29,7 @@ export default function Bio() {
             </span>
           ))}
         </p>
-        <p className="m-0 gap-2 text-2xl leading-snug sm:text-4xl">
+        <p className="m-0 gap-6 text-2xl py-5 leading-snug sm:text-4xl">
           {phrase2.split(" ").map((word, index) => (
             <span key={index} className="relative mr-1.5 inline-flex overflow-hidden">
               <motion.span
@@ -49,7 +49,7 @@ export default function Bio() {
           animate={isInView ? "open" : "closed"}
           className="m-0 pb-3 text-base font-light sm:text-lg"
         >
-          A 2nd Year student @ The University of Waterloo .
+          Current Rocketry Payload Member & Project Assistant @ University of Waterloo
         </motion.p>
         <motion.p
           variants={opacity}
@@ -57,14 +57,14 @@ export default function Bio() {
           className="m-0 text-base font-light sm:text-lg"
         >
           I've led educational and simulation-based projects focused on topics like classical physics and gravitational
-          waves, while also contributing to rocketry payload research and design.
+          waves, while also contributing to rocketry payload research and design. Leading to multiple compeitions wins and succesful flow.
         </motion.p>
         <div data-scroll-speed={0.1}>
           <RoundedButton
             href="/about"
             className="absolute ml-56 mt-6 flex h-[100px] w-[100px] cursor-pointer items-center justify-center rounded-full bg-[#e74c3c] text-white sm:ml-16 sm:mt-16 sm:h-[200px] sm:w-[200px]"
           >
-            About me
+            Learn More
           </RoundedButton>
         </div>
       </div>

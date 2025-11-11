@@ -54,7 +54,7 @@ export default function TimelineFilters({
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Timeline</h1>
           <p className="text-lg text-gray-600 max-w-3xl">
             Explore my journey through research, projects, achievements and education. Use the filters below to navigate by year,
-            category, or search for specific topics.
+            category, or search for specific topics. 
           </p>
         </div>
 
