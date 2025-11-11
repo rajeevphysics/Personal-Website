@@ -6,9 +6,11 @@ import Footer from "@/components/footer"
 import ScrollCursor from "@/components/scroll-cursor"
 import TimelineFilters from "@/components/timeline/timeline-filters"
 import TimelineEventsList from "@/components/timeline/timeline-events-list"
+import TimelineEventsListMobile from "@/components/mobile/timeline-event-list-mobile"
 import BottomSheetModal from "@/components/timeline/bottom-sheet-modal"
 import ScrollToTopButton from "@/components/timeline/scroll-to-top-button"
 import { timelineEvents, type TimelineEvent } from "@/lib/timeline-data"
+import { useMobile } from "@/hooks/use-mobile"
 
 export default function TimelinePage() {
   const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)
@@ -19,50 +21,11 @@ export default function TimelinePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isArrowAbsolute, setIsArrowAbsolute] = useState(false)
   const [arrowAbsoluteTop, setArrowAbsoluteTop] = useState(0)
+  const isMobile = useMobile()
 
   useEffect(() => {
-    // Immediate attempt
     window.scrollTo(0, 0)
-    if (typeof window !== "undefined" && (window as any).lenis) {
-      ;(window as any).lenis.scrollTo(0, { immediate: true })
-    }
-
-    // Multiple retries with increasing delays
-    const timers = [
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-        if (typeof window !== "undefined" && (window as any).lenis) {
-          ;(window as any).lenis.scrollTo(0, { immediate: true })
-        }
-      }, 100),
-
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-        if (typeof window !== "undefined" && (window as any).lenis) {
-          ;(window as any).lenis.scrollTo(0, { immediate: true })
-        }
-      }, 300),
-
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-        if (typeof window !== "undefined" && (window as any).lenis) {
-          ;(window as any).lenis.scrollTo(0, { immediate: true })
-        }
-      }, 500),
-
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-        if (typeof window !== "undefined" && (window as any).lenis) {
-          ;(window as any).lenis.scrollTo(0, { immediate: true })
-        }
-      }, 800),
-    ]
-
-    return () => {
-      timers.forEach((timer) => clearTimeout(timer))
-    }
-  }, []) 
-
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -188,7 +151,11 @@ export default function TimelinePage() {
 
         <div className="relative z-20 py-12 px-4 md:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <TimelineEventsList eventsByYear={eventsByYear} years={years} onEventClick={setSelectedEvent} />
+            {isMobile ? (
+              <TimelineEventsListMobile eventsByYear={eventsByYear} years={years} onEventClick={setSelectedEvent} />
+            ) : (
+              <TimelineEventsList eventsByYear={eventsByYear} years={years} onEventClick={setSelectedEvent} />
+            )}
           </div>
         </div>
       </div>

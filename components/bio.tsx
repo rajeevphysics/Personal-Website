@@ -4,20 +4,21 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import RoundedButton from "./anim/rounded-button"
 import { slideUp, opacity } from "./anim/anim"
+import {phrasefirst, phrasesecond, part1, part2 } from "@/lib/bio-data"
+
 
 export default function Bio() {
-  const phrase1 = "An undergraduate experimental physicist bridging theory and experiment."
+  const phrase1 = phrasefirst
 
-  const phrase2 =
-    "Particularly interested the fields of optical and quantum systems, as well as condensed matter. I believe that these disciplines will lead to new discoveries about the world."
+  const phrase2 = phrasesecond
 
   const description = useRef(null)
-  const isInView = useInView(description)
+  const isInView = useInView(description, { once: true, margin: "-100px" })
 
   return (
     <div
       ref={description}
-      className="relative flex flex-col justify-center gap-8 p-8 pb-24 sm:mt-[50px] sm:flex-row sm:p-20 sm:pb-32"
+      className="relative flex flex-col justify-center gap-8 pt-8 pb-24 sm:mt-[50px] sm:flex-row sm:p-20 sm:pb-32"
     >
       <div className="space-y-1 font-sans z-50">
         <p className="m-0 gap-2 text-2xl leading-snug sm:text-4xl">
@@ -49,15 +50,14 @@ export default function Bio() {
           animate={isInView ? "open" : "closed"}
           className="m-0 pb-3 text-base font-light sm:text-lg"
         >
-          Current Rocketry Payload Member & Project Assistant @ University of Waterloo
+          {part1}
         </motion.p>
         <motion.p
           variants={opacity}
           animate={isInView ? "open" : "closed"}
           className="m-0 text-base font-light sm:text-lg"
         >
-          I've led educational and simulation-based projects focused on topics like classical physics and gravitational
-          waves, while also contributing to rocketry payload research and design. Leading to multiple compeitions wins and succesful flow.
+          {part2}
         </motion.p>
         <div data-scroll-speed={0.1}>
           <RoundedButton
