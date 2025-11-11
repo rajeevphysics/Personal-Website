@@ -6,11 +6,13 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import MenuCursor from "./menu-cursor"
+import { useMobile } from "@/hooks/use-mobile"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
+  const isMobile = useMobile()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +47,13 @@ export default function Header() {
 
       <header
         className={`fixed top-0 left-0 right-0 z-[35] bg-background/80 backdrop-blur-sm ${
-          isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+          isMobile ? "hidden" : isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
-              <img src="/favicon.svg" alt="P Logo" width={32} height={32} className="rounded" />
+              <img src="/favicon.jpg" alt="P Logo" width={32} height={32} className="rounded" />
               <span className="text-sm">by Rajeev Persaud</span>
             </Link>
 
@@ -73,7 +75,7 @@ export default function Header() {
                 Timeline & Projects
               </Link>
               <a
-                href="/cv.pdf"
+                href="/CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium hover:opacity-70 transition-opacity"
@@ -104,7 +106,7 @@ export default function Header() {
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className={`fixed top-6 right-6 z-[100] bg-blue-500 text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-blue-600 transition-colors ${
-          isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+          isMobile ? "opacity-100" : isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         {isMenuOpen ? "CLOSE" : "MENU"}
@@ -112,7 +114,7 @@ export default function Header() {
 
       <div
         className={`fixed inset-0 z-[90] bg-background/95 backdrop-blur-md transition-opacity duration-300 ${
-          isMenuOpen && isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+          isMenuOpen && (isMobile || isScrolled) ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         <nav className="flex flex-col items-center justify-center h-full gap-8">

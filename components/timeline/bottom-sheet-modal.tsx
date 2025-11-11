@@ -100,7 +100,7 @@ export default function BottomSheetModal({ selectedEvent, onClose, onEventClick 
 
                   <div className="flex items-baseline gap-4">
                     <span className="text-blue-500 font-bold text-lg">
-                      {selectedEvent.month} {selectedEvent.year}
+                      {selectedEvent.month} {selectedEvent.date} {selectedEvent.year}
                     </span>
                   </div>
 
@@ -172,7 +172,7 @@ export default function BottomSheetModal({ selectedEvent, onClose, onEventClick 
                               </span>
                             </div>
                             <p className="text-sm text-gray-600">
-                              {event.month} {event.year}
+                              {event.month} {event.date} {event.year}
                             </p>
                           </div>
                         </div>
